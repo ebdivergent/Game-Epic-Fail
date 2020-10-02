@@ -16,7 +16,7 @@ namespace GameEpicFail.Menus
 
         void Start() => SetUpInputField();
 
-        private void SetUpInputField()
+        public void SetUpInputField()
         {
             if(!PlayerPrefs.HasKey(PlayerPrefsNameKey))
                 { return; }

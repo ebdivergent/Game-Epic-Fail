@@ -246,14 +246,14 @@
  <Reference Include="UnityEditor">
  <HintPath>F:/Unity/2019.4.3f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
  </Reference>
- <Reference Include="DOTween">
- <HintPath>D:/[Study] Epic Fail/Game-Epic-Fail/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
- </Reference>
  <Reference Include="Photon3Unity3D">
  <HintPath>D:/[Study] Epic Fail/Game-Epic-Fail/Assets/Photon/PhotonLibs/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="websocket-sharp">
  <HintPath>D:/[Study] Epic Fail/Game-Epic-Fail/Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>D:/[Study] Epic Fail/Game-Epic-Fail/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>F:/Unity/2019.4.3f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
