@@ -609,6 +609,9 @@
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/[Study] Epic Fail/Game-Epic-Fail/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Cinemachine">
+ <HintPath>D:/[Study] Epic Fail/Game-Epic-Fail/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>D:/[Study] Epic Fail/Game-Epic-Fail/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
@@ -626,6 +629,9 @@
  </Reference>
  <Reference Include="Unity.Rider.Editor">
  <HintPath>D:/[Study] Epic Fail/Game-Epic-Fail/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>D:/[Study] Epic Fail/Game-Epic-Fail/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>D:/[Study] Epic Fail/Game-Epic-Fail/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>

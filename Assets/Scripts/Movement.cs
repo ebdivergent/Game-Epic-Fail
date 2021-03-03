@@ -3,35 +3,65 @@ using UnityEngine;
 
 namespace GameEpicFail.Movement
 {
+
     [RequireComponent(typeof(CharacterController))]
     public class Movement : MonoBehaviourPun
     {
-        [SerializeField] float _speed;
+        [SerializeField] private float movementSpeed = 0f;
 
-        private CharacterController _characterController;
+        private CharacterController controller = null;
+        private Transform mainCameraTransform = null;
+        public float jumpSpeed = 8.0F;
+        public float gravity = 20.0F;
+        private Vector3 moveDirection = Vector3.zero;
 
+        private void Start()
+        {
+            controller = GetComponent<CharacterController>();
+            mainCameraTransform = Camera.main.transform;
+        }
 
-        void Start() => _characterController = GetComponent<CharacterController>();
-
-        // Update is called once per frame
         void Update()
         {
-            if(photonView.IsMine)
+            if (photonView.IsMine)
             {
-                TakeIput();
+                TakeInput();
             }
         }
 
-        private void TakeIput()
+        private void TakeInput()
         {
             var movement = new Vector3
             {
-                x = Input.GetAxis("Horizontal"),
-                y = 0,
-                z = Input.GetAxis("Vertical"),
+                x = Input.GetAxisRaw("Horizontal"),
+                y = 0f,
+                z = Input.GetAxisRaw("Vertical"),
             }.normalized;
 
-            _characterController.SimpleMove(movement * _speed);
+            Vector3 forward = mainCameraTransform.forward;
+            Vector3 right = mainCameraTransform.right;
+
+            forward.y = 0f;
+            right.y = 0f;
+
+            forward.Normalize();
+            right.Normalize();
+
+            if (controller.isGrounded && Input.GetButton("Jump"))
+            {
+                moveDirection.y = jumpSpeed;
+            }
+            moveDirection.y -= gravity * Time.deltaTime;
+            controller.Move(moveDirection * Time.deltaTime);
+
+            Vector3 calculatedMovement = (forward * movement.z + right * movement.x).normalized;
+
+            if (calculatedMovement != Vector3.zero)
+            {
+                transform.rotation = Quaternion.LookRotation(calculatedMovement);
+            }
+
+            controller.SimpleMove(calculatedMovement * movementSpeed);
         }
     }
 }
